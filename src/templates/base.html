@@ -1,0 +1,221 @@
+{% load staticfiles %}
+
+{% if request.GET %}	
+	{% include "navigation_bar.html" %}
+{% else %}
+	{% include "nav_absolute_bar.html" %}
+{% endif %}
+		
+
+{% block content %}
+<!-- about -->
+<div class="about" id="about">
+
+	{% for obj in object_list %}
+
+		<div class="col-md-6 about-left-w3ls">
+			<img src='{{ obj.image.url }}' class="img-responsive" />
+		</div>					
+		
+		<div class="col-md-6 person-info-agileits-w3layouts">
+		<h3 class="w3_head w3_head1">About Me <span>I am <!-- <a href='{{ obj.get_absolute_url }}'></a>--> {{ obj.name }} </span></h3>
+		<p><span>Hi!, I am {{ obj.name }} </span>{{ obj.personal_quote }}</p>
+			<ul>
+				<li><span>Name</span>: {{ obj.name }} </li>
+				<li><span>DOB</span>: {{ obj.dob }}</li>
+				<li><span>Gender</span>: {{ obj.gender }}</li>
+				<li><span>Email</span>: <a href="mailto:{{ obj.email }}">{{ obj.email }}</a></li>
+				<li><span>Mobile</span>: {{ obj.mobile }}</li>
+				<li><span>Website</span>: <a href="#">www.bini.com</a></li>
+				<li><span>Address</span>: {{ obj.address}}</li>				
+			</ul>
+		</div>
+		{% endfor %}
+	<div class="clearfix"></div>
+</div>
+<!-- //about-bottom -->
+
+				<div id="small-dialog" class="mfp-hide w3ls_small_dialog wthree_pop">		
+					<div class="agileits_modal_body">
+						<iframe src="https://player.vimeo.com/video/18417202"></iframe>
+					</div>
+				</div>
+<!-- mid -->
+<section class="mid-w3layouts">
+	<div class="container">
+		<h6>Iam available for freelance projects.</h6>
+		<h3>Let's <span>work</span> together indeed!</h3>
+		<a href="#contact" class="scroll">Get quotes</a>
+	</div>
+</section>
+<!-- //mid -->
+<!--skills -->
+<div class="skills-agileinfo" id="skills">
+	<div class="container">
+		<h3 class="w3_head w3_head1 white-agile">My Skills <span>My special expertise</span></h3>
+				<div class="modal-spa">
+					<div class="skills"> 
+						<div class="col-md-6 bar-grids bargrids-left">							
+							<h4><span class="glyphicon glyphicon-cog"></span> Technical Skills </h4>
+							{% for tech in techns_list %}
+								<h6>{{ tech.title }}  <span> {{ tech.percentage }}% </span></h6>
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped active" style="width: {{ tech.percentage }}%">
+									</div>
+								</div>
+							{% endfor %}							
+						</div> 
+
+						
+						<div class="col-md-6 bar-grids  w3-agile hideContent">
+							<h4><span class="glyphicon glyphicon-briefcase"></span> Professional Skills </h4>
+							{% for pro in profess_list %}
+								<h6>{{ pro.title }}<span> {{ pro.percentage }}% </span></h6>							
+								<div class="progress">
+									<div class="progress-bar progress-bar-striped active" style="width: {{ pro.percentage }}%">
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+						<div class="clearfix"> </div>
+					</div>					
+				</div> 
+				<div class="more"><a href="/skills/">Read More</a></div>
+		</div> 
+</div> 
+<!-- //skills -->
+<!-- experiences -->
+
+<div class="work" id="work">
+	<div class="container">
+		<h3 class="w3_head w3_head1">Experience, Education, Events & Awards<span>More about my past</span></h3>
+		<h5>
+			Work experience 
+			<a href="/experiences/"><img src='{% static "images/readmore.png" %}' /></a>
+		</h5> 
+		
+		{% for expr in exper_list %}
+			<div class="work-info-agileits">
+				<div class="col-md-12 work-right-w3-agileits">
+					{{ expr.description }}
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+		{% endfor %}
+
+
+		
+		<h5 class="work2">Education</h5>
+		
+		{% for ql in ql_list %}
+			<div class="work-info-agileits">
+				<div class="col-md-4 work-left-agileits-w3layouts">
+					<h6><i class="fa fa-calendar-check-o" aria-hidden="true"></i> 
+						{{ ql.degree }}
+						{% if ql.division %}
+							({{ ql.division }}) 
+						{% endif %}
+					</h6>
+				</div>
+				<div class="col-md-8 work-right-w3-agileits">
+					<h3>{{ ql.university }}</h3>
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+		{% endfor %}
+
+
+		<h5 class="work2">
+			Event / Exhibition
+			<a href="/events/"><img src='{% static "images/readmore.png" %}' /></a>
+		</h5>
+	    	
+		{% for event in event_list %}
+			<div class="work-info-agileits">
+				<div class="col-md-12 work-right-w3-agileits">
+					{{ event.description }}
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+		{% endfor %}
+
+
+		<h5 class="work2">
+			Achievement / Awards
+			<a href="/awards/"><img src='{% static "images/readmore.png" %}' /></a>
+		</h5>
+	    	
+		{% for awd in award_list %}
+			<div class="work-info-agileits">
+				<div class="col-md-12 work-right-w3-agileits">
+					{{ awd.description }}
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+		{% endfor %}
+
+		
+    </div>
+</div>	
+<!-- //experiences -->
+
+
+ <!-- gallery -->
+<div class="gallery_wthree" id="gallery">
+ <div class="container">
+      <h3 class="w3_head w3_head1">
+      	My Projects 
+      	<span>My latest work</span>
+      	<a href="/projects/"><img src='{% static "images/readmore.png" %}' /></a>
+      </h3>
+	  <div class="gallery_grid agileits_w3layouts">
+
+	  	{% for obj in project_list %}
+		  	<div class="col-md-4 grid-1 grid-c grid_w3l">
+				<a class="fix-img-heigh" href='{{ obj.get_absolute_url }}'>
+					<img src='{{ obj.album_photo.url }}' alt=" " class="img-responsive" />
+					<div class="w3agile-text w3agile-text-small full-height-w3">
+						<h5>{{ obj.name }}</h5>
+			        </div>
+				</a>
+			</div>
+		{% endfor %}
+
+		<div class="clearfix"></div>
+
+	</div>
+</div>
+</div>
+<!-- //gallery -->
+
+<!-- //Contact form and map -->
+<div class="contact" id="contact">
+	<h3 class="w3_head w3_head1">
+		Contact Me 
+		<a href="/contact/"><img src='{% static "images/readmore.png" %}' /></a>
+		<span>Get in touch with me</span></h3>
+		<div class="col-md-5 contact-agileits-w3layouts">
+
+			{% include "messages_display.html" %}
+
+			<form method="POST" action="" enctype="multipart">{% csrf_token %}
+				{{ form.as_p }}
+				<input type="submit" value="submit" />
+			</form>
+
+		</div>
+
+		<div class="col-md-7 contact-map-right">
+			<div id="map">
+				<iframe src="https://www.google.com/maps/d/embed?mid=1x-Utzcyq6JVcOoMaL1afb9_kxAs" width="100%" height="670"></iframe>
+			</div>		
+		</div>
+		<div class="clearfix"></div>
+</div>
+<!-- //Contact form and map -->
+
+
+{% endblock content %}
+
+
+{% include "footer.html" %}

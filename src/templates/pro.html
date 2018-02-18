@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<div class="skills-agileinfo" id="skills">
+	<div class="container">
+
+		<h3 class="w3_head w3_head1 white-agile">My Skills <span>My special expertise</span></h3>
+
+		<div class="col-md-6 bar-grids bargrids-left">							
+			<h4><span class="glyphicon glyphicon-cog"></span> Technical Skills </h4>
+			{% for tech in techn_list %}
+				<h6>{{ tech.title }}  <span> {{ tech.percentage }}% </span></h6>
+				<div class="progress">
+					<div class="progress-bar progress-bar-striped active" style="width: {{ tech.percentage }}%">
+					</div>
+				</div>
+			{% endfor %}							
+		</div> 
+
+		<div class="col-md-6 bar-grids  w3-agile hideContent">
+			<h4><span class="glyphicon glyphicon-briefcase"></span> Professional Skills </h4>
+			{% for pro in prof_list %}
+				<h6>{{ pro.title }}<span> {{ pro.percentage }}% </span></h6>							
+				<div class="progress">
+					<div class="progress-bar progress-bar-striped active" style="width: {{ pro.percentage }}%">
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+		<div class="clearfix"> </div>	
+	</div>
+</div>
+
+{% endblock content %}

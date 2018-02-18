@@ -1,0 +1,74 @@
+h1{
+	color: #ff0000;
+}
+
+/*
+.bargrids-left{
+	overflow-y: scroll;
+	height: 400px;
+}
+
+.bar-grids{
+	overflow-y: scroll;
+	height: 400px;	
+}
+*/
+
+input, button, select, textarea {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding: 7px 10px;
+    background: transparent;
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+}
+
+.messages .dis{
+    display: list-item;
+    text-align: -webkit-match-parent;
+    list-style-type: none;
+}
+
+.obj-desc{
+    color: #ffffff;
+    line-height: 3em;
+    font-size: 18px;
+}
+
+#contact{
+    margin: 30px 0px 30px 0px;
+}
+
+.more{
+    margin: 0px auto;
+    padding: 0px;
+    text-align: center;
+    background-color: #c2c2c2;
+    width: 150px;
+    padding: 4px;
+}
+
+.more a{    
+    color: #fff;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+.fix-img-heigh{
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+.cm-overlay{
+    height: 300px;
+}
+
+.a-txt, .a-txt:hover{
+    color: #fff;
+}
+

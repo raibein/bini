@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="skills-agileinfo">
+	<div class="container">
+		<h3 class="w3_head w3_head1 white-agile">My Awards</h3>			
+			<div class="work-info-agileits">
+				<div class="col-md-6 col-md-offset-3 obj-desc">
+					<ul>
+						{% for obj in object_list %}
+							<li> {{ obj.description }} </li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+		<div class="clearfix"> </div>	
+	</div>
+</div>
+
+{% endblock content %}

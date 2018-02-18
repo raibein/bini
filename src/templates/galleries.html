@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+<!-- gallery -->
+<div class="gallery_wthree" id="gallery">
+ <div class="container">
+      <h3 class="w3_head w3_head1">
+      	My Projects 
+      	<span>My latest work</span>
+      </h3>
+	  <div class="gallery_grid agileits_w3layouts">
+
+	  	{% for obj in multiple_image_list %}
+		  	<div class="col-md-4 grid-1 grid-c grid_w3l">
+				<a class="cm-overlay" href='{{ obj.multi_images.url }}'>
+					<img src='{{ obj.multi_images.url }}' alt=" " class="img-responsive" />
+					<div class="w3agile-text w3agile-text-small full-height-w3">
+						<h5>{{ obj.projectId }}</h5>
+			        </div>
+				</a>
+			</div>
+		{% endfor %}
+
+		<div class="clearfix"></div>
+
+	</div>
+</div>
+</div>
+<!-- //gallery -->
+
+
+{% endblock content %}

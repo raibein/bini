@@ -1,0 +1,32 @@
+h1{
+	color: #ff0000;
+}
+
+/*
+.bargrids-left{
+	overflow-y: scroll;
+	height: 400px;
+}
+
+.bar-grids{
+	overflow-y: scroll;
+	height: 400px;	
+}
+*/
+
+input, button, select, textarea {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding: 7px 10px;
+    background: transparent;
+    color: #fff;
+    font-size: 14px;
+    width: 100%;
+}
+
+.messages .dis{
+    display: list-item;
+    text-align: -webkit-match-parent;
+    list-style-type: none;
+}

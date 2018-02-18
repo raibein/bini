@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+	<!-- {{ block.super }} -->
+
+	<h1>Contact Form</h1>
+
+	{% include "messages_display.html" %}
+
+
+	<form method="POST" action="" enctype="multipart">{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="submit" />
+	</form>
+{% endblock content %}
